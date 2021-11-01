@@ -1,9 +1,5 @@
 pipeline{
-    
-    tools{
-        dockerTool 'mydocker'
-    }
-    agent none
+    agent any
     environment{
         IMAGE_NAME='doppal/myprivate-repo:php$BUILD_NUMBER'
     }
