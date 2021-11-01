@@ -9,7 +9,6 @@ pipeline{
             steps{
                 script{
                     echo "Building the docker image"
-                    sh 'sudo systemctl start docker'
                     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         sh "sudo docker build -t ${IMAGE_NAME} ."
                         sh 'sudo sudo docker login -u $USER -p $PASS'
@@ -19,7 +18,6 @@ pipeline{
             }
         }
         stage("Deploy app via dockercompose file"){
-            agent {label 'linux_slave'}
             steps{
                 script{
                     echo "deploy with dockercompose"
