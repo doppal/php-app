@@ -5,7 +5,7 @@ pipeline{
     }
     agent none
     environment{
-        IMAGE_NAME='doppal/myownimage:php$BUILD_NUMBER'
+        IMAGE_NAME='doppal/myprivate-repo:php$BUILD_NUMBER'
     }
     stages{
         stage("Build the docker image for php"){

@@ -1,7 +1,7 @@
 version: "3.8"
 services:
         web:
-          image: doppal/myownimage:phpapp
+          image: "${IMAGE}"
           ports:
             - "8001:80"
           depends_on:
