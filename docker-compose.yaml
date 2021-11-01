@@ -1,13 +1,13 @@
 version: "3.8"
 services:
         web:
-          image: "${IMAGE}"
+          image: doppal/myownimage:phpapp
           ports:
             - "8001:80"
           depends_on:
             - mysql
         mysql:
-          image: devopstrainer/java-mvn-privaterepo:mysql
+          image: doppal/myprivate-repo:mysql
           volumes:
           - db_data:/var/lib/mysql
           environment:
