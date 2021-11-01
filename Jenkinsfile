@@ -23,7 +23,6 @@ pipeline{
             steps{
                 script{
                     echo "deploy with dockercompose"
-                     sh 'sudo systemctl start docker'
                     sh "bash ./remote-server.sh ${IMAGE_NAME}"
                 }
             }
